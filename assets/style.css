@@ -220,6 +220,18 @@ input:checked[type="checkbox"]::before{
     color: white;
 }
 
+/* Lines */
+
+.card__basic hr,
+.card__master hr{
+    border: none;
+    border-top: 1px solid var(--bg-color-ligh-blue);
+}
+
+.card__professional hr{
+    border: none;
+    border-top: 1px solid white;
+}
 
 /* Responsive */
 @media (max-width: 900px){
