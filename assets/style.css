@@ -1,0 +1,246 @@
+:root{
+    --bg-color-gradient: linear-gradient(to right, hsl(236, 72%, 79%), hsl(237, 63%, 64%));
+    --bg-color-very-light: hsl(240, 78%, 98%);
+    --bg-color-ligh-blue:  hsl(234, 14%, 74%);
+    --bg-color-grayish-blue: hsl(233, 13%, 49%);
+    --bg-color-dark-blue: hsl(232, 13%, 33%);
+    --bg-color-violet:  hsl(238, 69%, 67%);
+
+    --text-color-dark:  hsl(232, 13%, 33%);
+    --text-color-light: hsl(234, 14%, 74%);
+    --text-color-violet:  hsl(238, 69%, 67%);
+    --text-color-grayish: hsl(233, 13%, 49%);
+    --ft-size: 15px;
+    --ft-family: 'Montserrat', sans-serif;;
+}
+
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    height: 100vh;
+    font-family: var(--ft-family);
+    font-size: var(--ft-size);
+    background-color: var(--bg-color-very-light);
+    background-image: url('../images/bg-bottom.svg'), url('../images/bg-top.svg');
+    background-position: bottom left, top right;
+    background-repeat: no-repeat, no-repeat;
+    background-size: auto, 310px;
+}
+
+.container__header{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 30px;
+}
+
+.header__title{
+    color: var(--text-color-grayish);
+    font-size: 1.8rem;
+}
+
+/* Checkbox */
+.pay__box{
+    margin-top: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+}
+
+.pay__box span{
+    color: var(--text-color-light);
+    font-weight: bolder;
+    font-size: 1rem;
+}
+
+
+input[type="checkbox"]{
+    position: relative;
+    width: 60px;
+    height: 30px;
+    appearance: none;
+    background: var(--bg-color-gradient);
+    outline: none;
+    border-radius: 20px;
+    box-shadow: inset 0 0 5px rgba(0, 0, 0, .2);
+    transition: .5s;
+    cursor: pointer;
+}
+
+input:checked[type="checkbox"]{
+    background: var(--bg-color-gradient);
+}
+
+input[type="checkbox"]::before{
+    content: '';
+    position: absolute;
+    width: 25px;
+    height: 25px;
+    border-radius: 20px;
+    top: 3px;
+    left: 6px;
+    background-color: white;
+    transform: scale(1.1);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, .2);
+    transition: .5s;
+}
+
+input:checked[type="checkbox"]::before{
+    left: 30px;
+}
+
+/* General styles */
+.cards{
+    margin-top: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    text-align: center;
+}
+
+.border-top-bottom-left{
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+}
+
+.border-top-bottom-right{
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+}
+
+.cards article{
+    padding: 20px;
+    width: 340px;
+    background-color: white;
+}
+
+.card__basic,
+.card__master{
+    margin-top: 15px;
+    height: 410px;
+    background-color: white;
+}
+
+.card__title{
+    color: var(--text-color-grayish);
+    font-size: 20px;
+    font-weight: 700;
+    margin: 10px;
+}
+
+.card__price{
+    font-size: 60px;
+    margin: 20px;
+    color: var(--text-color-dark);
+}
+
+
+.color__white{
+    color: white;
+}
+
+.card__p{
+    margin: 15px;
+    color: var(--text-color-grayish);
+    font-weight: 700;
+}
+
+/* Card professional */
+
+.card__professional{
+    height: 440px;
+    border-radius: 10px;
+    background: var(--bg-color-gradient);
+}
+
+.p__title{
+    color: white;
+    font-weight: 700;
+    font-size: 20px;
+    margin: 20px;
+}
+
+.p__price{
+    font-size: 60px;
+    margin: 20px;
+    color: white;
+}
+
+.p__para{
+    margin: 15px;
+    color: white;
+    font-weight: 700;
+}
+
+
+
+/* Hovers */
+
+.card__btn,
+.p__btn{
+    width: 100%;
+    height: 45px;
+    border: none;
+    user-select: none;
+    text-transform: uppercase;
+    font-size: 16px;
+    border-radius: 10px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all ease .5s;
+}
+
+.card__btn{
+    margin: 20px 0px;
+    background: linear-gradient(135deg, #a2a7f0 0%, #696edd 100%);
+    color: white;
+}
+
+.card__btn:hover{
+    background: transparent;
+    border: 1px solid var(--bg-color-grayish-blue);
+    color: var(--text-color-violet);
+}
+
+.p__btn{
+    margin: 25px 0px;
+    background-color: white;
+    color: var(--text-color-violet);
+}
+
+.p__btn:hover{
+    background: transparent;
+    border: 1px solid white;
+    color: white;
+}
+
+
+/* Responsive */
+@media (max-width: 900px){
+
+    body{
+        background-image: url('../images/bg-top.svg');
+        background-position: top right;
+        background-repeat: no-repeat;
+        background-size: 210px;
+    }
+
+    .cards{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 20px;
+        padding: 20px;
+    }
+
+    .cards article{
+        border-radius: 10px;
+    }
+}
